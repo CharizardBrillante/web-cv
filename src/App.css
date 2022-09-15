@@ -1,38 +1,174 @@
 .App {
+  color: var(--text-primary);
+  background: radial-gradient(
+    ellipse at center, 
+    var(--bg-gradient1) 0%, 
+    var(--bg-gradient2) 100%   
+  ),
+  repeating-linear-gradient(
+      45deg, transparent,
+      transparent 1px, 
+      var(--bg-gradient2) 7px, 
+      var(--bg-gradient1) 4px
+    );
+  padding: 2em 4em;
+}
+
+a {
+  color: var(--primary) !important;
+  text-decoration: none !important;
+}
+
+a.active {
+  color: var(--accent) !important;
+}
+
+.section-title {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh 0vw 8vh 0vw!important;
+}
+
+.title-line {
+  border: 1px solid var(--accent) !important;
+  width: 34vw;
+  height: 2px;
+}
+
+.box-shadow {
+  box-shadow: 1px 1px 8px var(--shadow);
+}
+
+
+
+/*---------------------- BUTTONS ------------------------*/
+.btn {
+  padding: .5em !important;
+  color: var(--text-primary)!important;
+  background-color: var(--background)!important;
+  border: 2px var(--accent) solid!important;
+  border-radius: 50%!important;
+  float: right!important;
+  transition: all 1.5s!important;
+  z-index: 10 !important;
+}
+/*----------------------- NAVBAR -------------------------*/
+.my-nav {
+  transition: all 1.5s;
+  
+}
+.navbar-toggler {
+  margin-bottom: 2vh !important;
+  color: var(--accent)!important;
+}
+.nav-links {
+  width: 100%;
+  color: var(--text-primary)!important;
+  background-color: var(--background)!important;
+  border: 1px solid var(--accent)!important;
+  display: flex !important;
+  justify-content: space-evenly !important;
+  transition: all 1.5s;
+  border-radius: 10px;
+}
+
+.nav-link {
+  color: var(--text-primary)!important;
+}
+
+.nav-link:hover {
+  filter: drop-shadow(1px 1px 5px var(--text-primary));
+}
+
+/*---------------------- PROFILE ------------------------*/
+.profile {
+  margin-top: 10vh;
+}
+.profile-flex {
+  margin-top: 5vh !important;
+}
+.avatar {
+  border-radius: 50%;
+  animation: 0.7s ease-out 0s 1 slideInFromLeft;
+  margin-bottom: 5vh !important;
+  outline: 1px solid var(--text-secondary);
+}
+
+.profile-info {
+  background-color: var(--background) !important;
+  transition: all 1.5s !important;
+}
+.profile-info-item {
+  border: 1px solid var(--text-secondary) !important;
+  background-color: var(--background) !important;
+  color: var(--text-primary) !important;
+  padding: 1em 1em 0em 1em!important;
+  transition: all 1.5s !important;
+  text-align: left !important;
+}
+
+.profile-text{
+  padding: 2em !important;
+  border: 1px solid var(--text-secondary);
+  border-radius: 10px;
+  background-color: var(--background) !important;
+  transition: all 1.5s !important;
+}
+.profile-1, .profile-2, .profile-3 {
+  text-align: justify;
+}
+
+.profile-1 {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+}
+.profile-2 {
+  animation: 1.3s ease-out 0s 1 slideInFromRight;
+}
+.profile-3 {
+  animation: 1.6s ease-out 0s 1 slideInFromRight;
+}
+.profile-address {
+  animation: 0.7s ease-out 0s 1 slideInFromLeft;
+}
+
+.profile-address>a:hover {
+  filter: drop-shadow(1px 1px 5px var(--text-primary));
+}
+
+/*---------------------- EDUCATION -----------------------*/
+.edu-col{
+  display: flex;
+  justify-content: center;
+}
+
+.edu-card {
+  width: 20vw;
+  background-color: var(--background)!important;
+  border: 1px solid var(--text-secondary)!important;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.uni-card {
+  padding-top: 1em !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/*---------------------- ANIMATIONS ----------------------*/
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(+100%);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateX(0);
   }
 }
